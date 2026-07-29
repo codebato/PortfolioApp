@@ -1,28 +1,22 @@
-/* ============ DEĞİŞKENLER (Koyu Kurşuni Tema) ============ */
-/* ============ DEĞİŞKENLER ============ */
 :root {
-    /* Sol Sidebar (Koyu Gri) */
     --sidebar-bg: #71717a;
     --sidebar-text: #f4f4f5;
     --sidebar-muted: #e4e4e7;
     --sidebar-border: #52525b;
 
-    /* Sağ İçerik Alanı (Daha Soft ve Açık Gri) */
     --content-bg: #71717a;
-    /* Arka planı yumuşak soft bir griye çektik */
     --content-text: #f4f4f5;
     --content-muted: #e4e4e7;
     --content-border: #82828c;
-    /* Kutuların kenarlıkları ile uyumlu border */
 
-    /* Vurgu Rengi (Turkuaz) */
     --accent: #2dd4bf;
     --accent-hover: #14b8a6;
     --accent-bg: rgba(45, 212, 191, 0.15);
+    --accent-2: #2dd4bf;        /* YENİ — eksik olan buydu */
+    --content-faint: #a1a1aa;   /* YENİ — footer/iletişim için daha sönük gri */
 
     --sidebar-width: 320px;
 }
-
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
