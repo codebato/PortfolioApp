@@ -1,0 +1,129 @@
+@model PortfolioViewModel
+@functions {
+    string GetSkillIcon(string skillName)
+    {
+        return skillName switch
+        {
+            "C#" => "devicon-csharp-plain colored",
+            "ASP.NET Core" => "devicon-dotnetcore-plain colored",
+            "Entity Framework Core" => "devicon-dot-net-plain colored",
+            "SQL Server" => "devicon-microsoftsqlserver-plain colored",
+            "React" => "devicon-react-original colored",
+            "TypeScript" => "devicon-typescript-plain colored",
+            "JWT / Auth" => "bi bi-shield-lock-fill",
+            "Git / GitHub" => "devicon-git-plain colored",
+            _ => "bi bi-code-slash"
+        };
+    }
+}
+
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="page-wrapper">
+
+    <!-- ========== SOL SABİT SIDEBAR ========== -->
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <img src="@Model.ProfileImageUrl" alt="Profil Fotoğrafı" class="profile-img"
+                 onerror="this.src='https://placehold.co/160x160/2b2b2b/e0e0e0?text=Foto'" />
+
+            <p class="profile-title">@Model.Title</p>
+
+            <nav class="side-nav">
+                <a href="#home" class="nav-link"><i class="bi bi-house-door"></i> Home</a>
+                <a href="#about" class="nav-link"><i class="bi bi-person"></i> About</a>
+                <a href="#skills" class="nav-link"><i class="bi bi-bar-chart"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class="bi bi-kanban"></i> Projects</a>
+                <a href="https://blogapp-frontend-eight.vercel.app/" target="_blank" class="nav-link">
+                    <i class="bi bi-journal-text"></i> Blog
+                </a>
+            </nav>
+
+            <div class="contact-info">
+                <p><i class="bi bi-envelope-fill"></i> @Model.Email</p>
+                <p><i class="bi bi-geo-alt-fill"></i> @Model.Location</p>
+            </div>
+
+            <div class="social-icons">
+                @foreach (var s in Model.SocialLinks)
+                {
+                    <a href="@s.Url" target="_blank" title="@s.Name"><i class="bi @s.IconClass"></i></a>
+                }
+            </div>
+        </div>
+    </aside>
+
+    <!-- ========== SAĞ İÇERİK ALANI ========== -->
+    <main class="content">
+
+        <section id="home" class="section hero-section">
+        </section>
+
+        <section id="about" class="section">
+            <h3 class="section-title"><span>WHO</span> AM I</h3>
+            <p class="about-text">@Model.AboutText</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h3 class="section-title"><span>SKILLS</span></h3>
+            <div class="row skills-row">
+                <div class="col-md-6">
+                    <div class="skills-grid">
+                        @foreach (var skill in Model.SkillsColumn1)
+                        {
+                            <div class="skill-box">
+                                <i class="@GetSkillIcon(skill.Name)" style="font-size:1.4rem; margin-right:8px;"></i>
+                                <span class="skill-name">@skill.Name</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skills-grid">
+                        @foreach (var skill in Model.SkillsColumn2)
+                        {
+                            <div class="skill-box">
+                                <i class="@GetSkillIcon(skill.Name)" style="font-size:1.4rem; margin-right:8px;"></i>
+                                <span class="skill-name">@skill.Name</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h3 class="section-title"><span>PROJECTS</span></h3>
+            <div class="row g-4">
+                @foreach (var project in Model.Projects)
+                {
+                    <div class="col-md-6">
+                        <div class="project-card">
+                            <div class="project-img" style="background-image:url('@project.ImageUrl')"></div>
+                            <div class="project-body">
+                                <h4>@project.Title</h4>
+                                <p>@project.Description</p>
+                                <div class="project-tags">
+                                    @foreach (var tag in project.Tags)
+                                    {
+                                        <span class="tag">@tag</span>
+                                    }
+                                </div>
+                                <a href="@project.ProjectUrl" class="project-link">
+                                    Detayları Gör <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <footer class="footer">
+            &copy; @DateTime.Now.Year Tüm hakları saklıdır.
+        </footer>
+
+    </main>
+</div>
