@@ -24,7 +24,7 @@ namespace PortfolioApp.Models
 
     public class PortfolioViewModel
     {
-        
+        public string Name { get; set;} = "Batıhan Eyyubi";
         public string Title { get; set; } = "BackEnd Developer";
         public string ProfileImageUrl { get; set; } = "/img/profile.jpg";
 
