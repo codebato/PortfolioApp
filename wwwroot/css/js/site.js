@@ -1,3 +1,5 @@
+console.log("SITE.JS ÇALIŞTI");
+
 (function () {
 
     const savedTheme = localStorage.getItem("theme") || "dark";
