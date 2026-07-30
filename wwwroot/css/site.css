@@ -154,7 +154,7 @@ body {
 .content {
     flex: 1;
     padding: 3rem 4rem;
-    max-width: calc(100% - var(--sidebar-width));
+    max-width: 900px;
 }
 
 .section {
