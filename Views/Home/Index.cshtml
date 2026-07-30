@@ -128,36 +128,4 @@
 
         </div>
     </main>
-    <section id="projects" class="section">
-        <h3 class="section-title"><span>PROJECTS</span></h3>
-        <div class="row g-4">
-            @foreach (var project in Model.Projects)
-            {
-                <div class="col-md-6">
-                    <div class="project-card">
-                        <div class="project-img" style="background-image:url('@project.ImageUrl')"></div>
-                        <div class="project-body">
-                            <h4>@project.Title</h4>
-                            <p>@project.Description</p>
-                            <div class="project-tags">
-                                @foreach (var tag in project.Tags)
-                                {
-                                    <span class="tag">@tag</span>
-                                }
-                            </div>
-                            <a href="@project.ProjectUrl" class="project-link">
-                                Detayları Gör <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </section>
-
-    <footer class="footer">
-        &copy; @DateTime.Now.Year Tüm hakları saklıdır.
-    </footer>
-
-</main>
 </div>
