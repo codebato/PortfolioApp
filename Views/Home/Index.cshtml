@@ -57,73 +57,107 @@
 
     <!-- ========== SAĞ İÇERİK ALANI ========== -->
     <main class="content">
+        <div class="content-inner">
 
-        <section id="home" class="section hero-section">
-        </section>
+            <section id="home" class="section hero-section">
+            </section>
 
-        <section id="about" class="section">
-            <h3 class="section-title"><span>WHO</span> AM I</h3>
-            <p class="about-text">@Model.AboutText</p>
-        </section>
+            <section id="about" class="section">
+                <h3 class="section-title"><span>WHO</span> AM I</h3>
+                <p class="about-text">@Model.AboutText</p>
+            </section>
 
-        <section id="skills" class="section">
-            <h3 class="section-title"><span>SKILLS</span></h3>
-            <div class="row skills-row">
-                <div class="col-md-6">
-                    <div class="skills-grid">
-                        @foreach (var skill in Model.SkillsColumn1)
-                        {
-                            <div class="skill-box">
-                                <i class="@GetSkillIcon(skill.Name)" style="font-size:1.4rem; margin-right:8px;"></i>
-                                <span class="skill-name">@skill.Name</span>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="skills-grid">
-                        @foreach (var skill in Model.SkillsColumn2)
-                        {
-                            <div class="skill-box">
-                                <i class="@GetSkillIcon(skill.Name)" style="font-size:1.4rem; margin-right:8px;"></i>
-                                <span class="skill-name">@skill.Name</span>
-                            </div>
-                        }
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <h3 class="section-title"><span>PROJECTS</span></h3>
-            <div class="row g-4">
-                @foreach (var project in Model.Projects)
-                {
+            <section id="skills" class="section">
+                <h3 class="section-title"><span>SKILLS</span></h3>
+                <div class="row skills-row">
                     <div class="col-md-6">
-                        <div class="project-card">
-                            <div class="project-img" style="background-image:url('@project.ImageUrl')"></div>
-                            <div class="project-body">
-                                <h4>@project.Title</h4>
-                                <p>@project.Description</p>
-                                <div class="project-tags">
-                                    @foreach (var tag in project.Tags)
-                                    {
-                                        <span class="tag">@tag</span>
-                                    }
+                        <div class="skills-grid">
+                            @foreach (var skill in Model.SkillsColumn1)
+                            {
+                                <div class="skill-box">
+                                    <i class="@GetSkillIcon(skill.Name)" style="font-size:1.4rem; margin-right:8px;"></i>
+                                    <span class="skill-name">@skill.Name</span>
                                 </div>
-                                <a href="@project.ProjectUrl" class="project-link">
-                                    Detayları Gör <i class="bi bi-arrow-right"></i>
-                                </a>
-                            </div>
+                            }
                         </div>
                     </div>
-                }
-            </div>
-        </section>
+                    <div class="col-md-6">
+                        <div class="skills-grid">
+                            @foreach (var skill in Model.SkillsColumn2)
+                            {
+                                <div class="skill-box">
+                                    <i class="@GetSkillIcon(skill.Name)" style="font-size:1.4rem; margin-right:8px;"></i>
+                                    <span class="skill-name">@skill.Name</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <footer class="footer">
-            &copy; @DateTime.Now.Year Tüm hakları saklıdır.
-        </footer>
+            <section id="projects" class="section">
+                <h3 class="section-title"><span>PROJECTS</span></h3>
+                <div class="row g-4">
+                    @foreach (var project in Model.Projects)
+                    {
+                        <div class="col-md-6">
+                            <div class="project-card">
+                                <div class="project-img" style="background-image:url('@project.ImageUrl')"></div>
+                                <div class="project-body">
+                                    <h4>@project.Title</h4>
+                                    <p>@project.Description</p>
+                                    <div class="project-tags">
+                                        @foreach (var tag in project.Tags)
+                                        {
+                                            <span class="tag">@tag</span>
+                                        }
+                                    </div>
+                                    <a href="@project.ProjectUrl" class="project-link">
+                                        Detayları Gör <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
 
+            <footer class="footer">
+                &copy; @DateTime.Now.Year Tüm hakları saklıdır.
+            </footer>
+
+        </div>
     </main>
+    <section id="projects" class="section">
+        <h3 class="section-title"><span>PROJECTS</span></h3>
+        <div class="row g-4">
+            @foreach (var project in Model.Projects)
+            {
+                <div class="col-md-6">
+                    <div class="project-card">
+                        <div class="project-img" style="background-image:url('@project.ImageUrl')"></div>
+                        <div class="project-body">
+                            <h4>@project.Title</h4>
+                            <p>@project.Description</p>
+                            <div class="project-tags">
+                                @foreach (var tag in project.Tags)
+                                {
+                                    <span class="tag">@tag</span>
+                                }
+                            </div>
+                            <a href="@project.ProjectUrl" class="project-link">
+                                Detayları Gör <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; @DateTime.Now.Year Tüm hakları saklıdır.
+    </footer>
+
+</main>
 </div>
