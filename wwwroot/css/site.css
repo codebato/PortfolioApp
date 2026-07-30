@@ -16,6 +16,12 @@
     --content-faint: #71717a;
 
     --sidebar-width: 320px;
+    
+    /* Proje ve etiketler için dinamik değişkenler */
+    --card-bg: #1e1e1e;
+    --tag-bg: #27272a;
+    --tag-color: #d4d4d8;
+    --section-border: #27272a;
 }
 
 [data-theme='light'] {
@@ -34,6 +40,12 @@
     --accent-bg: rgba(20, 184, 166, 0.12);
     --accent-2: #14b8a6;
     --content-faint: #a8a29e;
+
+    /* Proje ve etiketler için dinamik değişkenler (Light) */
+    --card-bg: #ffffff;
+    --tag-bg: #f1f3f5;
+    --tag-color: #444444;
+    --section-border: #ddd6c9;
 }
 body {
     margin: 0;
