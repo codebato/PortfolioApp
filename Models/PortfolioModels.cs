@@ -33,7 +33,7 @@ namespace PortfolioApp.Models
         public string Location { get; set; } = "İzmir, Türkiye";
 
         public string AboutText { get; set; } =
-            "Hi, I'm Batıhan. I'm a self-taught backend developer building real-world projects with C#, ASP.NET Core, and SQL Server — and sharing what I learn on my blog.";
+            "Backend Developer building reliable and scalable applications with C#, ASP.NET Core, and SQL Server.";
             
 
         public List<SocialLink> SocialLinks { get; set; } = new()
