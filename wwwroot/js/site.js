@@ -11,7 +11,7 @@
         toggleBtn.addEventListener('click', function () {
             const current = document.documentElement.getAttribute('data-theme');
             const next = current === 'dark' ? 'light' : 'dark';
-            
+
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             updateIcon(next);
@@ -24,3 +24,26 @@
         icon.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
     }
 })();
+
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+const overlay = document.getElementById('sidebar-overlay');
+
+if (menuToggle && sidebar && overlay) {
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+        });
+    });
+}

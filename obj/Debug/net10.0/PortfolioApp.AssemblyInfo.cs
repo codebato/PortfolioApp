@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PortfolioApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dec49a7f406730605f0de39db937a46a029aafe7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06456e289cbce0994a74000c3e895485433695cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("PortfolioApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PortfolioApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
