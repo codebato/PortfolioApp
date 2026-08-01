@@ -58,6 +58,11 @@ body {
 .page-wrapper {
     display: flex;
     min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    border-left: 1px solid var(--sidebar-border);
+    border-right: 1px solid var(--sidebar-border);
 }
 
 /* ============ SOL SIDEBAR ============ */
@@ -181,7 +186,7 @@ body {
 }
 
 .theme-toggle-btn {
-    position: fixed;
+    position: absolute;
     top: 24px;
     right: 60px;
     z-index: 100;
