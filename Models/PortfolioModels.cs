@@ -26,7 +26,7 @@ namespace PortfolioApp.Models
     {
         public string Name { get; set;} = "Batıhan Eyyubi";
         public string Title { get; set; } = "BackEnd Developer";
-        public string ProfileImageUrl { get; set; } = "/img/profile.jpg";
+        public string ProfileImageUrl { get; set; } = "/img/profile.png";
 
         public string Email { get; set; } = "Batocode@gmail.com";
         
